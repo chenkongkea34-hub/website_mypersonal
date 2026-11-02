@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curriculum vitae for Chen Kongkea, software engineering student.">
+    <title>CV | Chen Kongkea</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+            background: #e9edf5;
+            font-synthesis: none;
+            text-rendering: optimizeLegibility;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 32px 16px;
+        }
+
+        .actions {
+            width: min(100%, 210mm);
+            margin: 0 auto 16px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .actions a,
+        .actions button {
+            display: inline-flex;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 16px;
+            border: 1px solid #d5daea;
+            border-radius: 9px;
+            background: #fff;
+            color: #26324a;
+            font: inherit;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .actions .save-button {
+            border-color: #5145cd;
+            background: #5145cd;
+            color: #fff;
+        }
+
+        .resume {
+            width: min(100%, 210mm);
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 17mm;
+            background: #fff;
+            box-shadow: 0 18px 55px rgba(27, 38, 64, 0.14);
+        }
+
+        .resume-header {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            padding-bottom: 22px;
+            border-bottom: 3px solid #5145cd;
+        }
+
+        .portrait {
+            width: 92px;
+            height: 92px;
+            flex: 0 0 92px;
+            border: 4px solid #eeedff;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 27%;
+        }
+
+        h1 {
+            margin: 0;
+            color: #18223b;
+            font-size: 32px;
+            letter-spacing: -0.8px;
+        }
+
+        .role {
+            margin: 6px 0 12px;
+            color: #5145cd;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+            color: #4b556b;
+            font-size: 12px;
+        }
+
+        .contact a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .resume-body {
+            display: grid;
+            grid-template-columns: minmax(0, 1.65fr) minmax(170px, 0.9fr);
+            gap: 28px;
+            padding-top: 20px;
+        }
+
+        section {
+            margin: 0 0 19px;
+        }
+
+        h2 {
+            margin: 0 0 9px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #e1e4ee;
+            color: #5145cd;
+            font-size: 13px;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            margin: 0;
+            color: #202b43;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        p {
+            margin: 6px 0 0;
+            color: #4b556b;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .meta {
+            color: #69738a;
+            font-size: 11px;
+        }
+
+        ul {
+            margin: 7px 0 0;
+            padding-left: 17px;
+            color: #4b556b;
+            font-size: 12px;
+            line-height: 1.55;
+        }
+
+        li + li {
+            margin-top: 4px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 9px;
+        }
+
+        .skill-list span {
+            padding: 5px 8px;
+            border-radius: 5px;
+            background: #f0efff;
+            color: #4036a9;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .entry + .entry {
+            margin-top: 15px;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 16px 10px;
+            }
+
+            .resume {
+                min-height: 0;
+                padding: 24px 20px;
+            }
+
+            .resume-header {
+                align-items: flex-start;
+                gap: 14px;
+            }
+
+            .portrait {
+                width: 70px;
+                height: 70px;
+                flex-basis: 70px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            .resume-body {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: #fff;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .actions {
+                display: none;
+            }
+
+            .resume {
+                width: 210mm;
+                min-height: 297mm;
+                margin: 0;
+                padding: 15mm 17mm;
+                box-shadow: none;
+            }
+
+            section,
+            .entry {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="actions" aria-label="CV actions">
+        <a href="./"><span aria-hidden="true">&larr;</span>&nbsp; Back to portfolio</a>
+        <button class="save-button" type="button" onclick="window.print()">Save CV as PDF</button>
+    </nav>
+
+    <main class="resume">
+        <header class="resume-header">
+            <img class="portrait" src="./profile.png" alt="Chen Kongkea">
+            <div>
+                <h1>Chen Kongkea</h1>
+                <p class="role">Software Engineering Student</p>
+                <div class="contact">
+                    <a href="mailto:chenkongkea34@gmail.com">chenkongkea34@gmail.com</a>
+                    <span>Phnom Penh, Cambodia</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="resume-body">
+            <div>
+                <section>
+                    <h2>Profile</h2>
+                    <p>Second-year software engineering student at BELTEI International University with a strong interest in web development. Building practical experience through academic projects, responsive interfaces, and database coursework. Eager to learn, collaborate, and contribute to internship or learning projects.</p>
+                </section>
+
+                <section>
+                    <h2>Education</h2>
+                    <div class="entry">
+                        <h3>Bachelor of Computer Science / IT</h3>
+                        <p class="meta">BELTEI International University · 2023–Present · Year 2</p>
+                        <ul>
+                            <li>Coursework in web development, database design, and object-oriented programming.</li>
+                            <li>Academic projects using HTML, CSS, JavaScript, and relational databases.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Selected Project</h2>
+                    <div class="entry">
+                        <h3>Shop Mart · Academic Project</h3>
+                        <p>Built a web application for shop owners to track sales and inventory.</p>
+                        <p class="meta">HTML · CSS · JavaScript · PHP · MySQL</p>
+                    </div>
+                    <div class="entry">
+                        <h3>University Web & Database Coursework</h3>
+                        <p>Designed responsive websites and database schemas for semester assignments. Collaborated on group work and used GitHub to manage code.</p>
+                    </div>
+                </section>
+            </div>
+
+            <aside>
+                <section>
+                    <h2>Technical Skills</h2>
+                    <h3>Frontend</h3>
+                    <div class="skill-list">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span><span>Tailwind CSS</span>
+                    </div>
+                    <h3 style="margin-top: 14px">Databases</h3>
+                    <div class="skill-list">
+                        <span>MySQL</span><span>SQL Server</span>
+                    </div>
+                    <h3 style="margin-top: 14px">Tools</h3>
+                    <div class="skill-list">
+                        <span>Git</span><span>GitHub</span><span>VS Code</span>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Strengths</h2>
+                    <ul>
+                        <li>Responsive web design</li>
+                        <li>Clean, maintainable code</li>
+                        <li>Problem-solving</li>
+                        <li>Continuous learning</li>
+                        <li>Team collaboration</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Availability</h2>
+                    <p>Open to internships and learning projects.</p>
+                </section>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,128 @@
+       ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366f1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-border {
+            position: relative;
+            background-clip: padding-box;
+            border: 1px solid transparent;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -1px;
+            border-radius: inherit;
+            background: linear-gradient(to bottom right, #6366f1, #a855f7, #ec4899);
+            opacity: 0.2;
+            transition: opacity 0.3s ease;
+        }
+        .gradient-border:hover::before {
+            opacity: 0.8;
+        }
+
+        /* Glassmorphism effects */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .light .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        /* Animated code block cursor */
+        .blinking-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background-color: #6366f1;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Toast Popup animation */
+        @keyframes slideIn {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-toast {
+            animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .hero-terminal-image {
+            display: block;
+            flex: 0 0 68%;
+            width: 68%;
+            height: 100%;
+            object-position: center 30%;
+        }
+
+        .hero-photo-card {
+            display: flex;
+            aspect-ratio: 5 / 4;
+            background: linear-gradient(110deg, #172033 0 65%, #5526a8 65%, #7c3aed 100%);
+            box-shadow: 0 0 32px rgba(124, 58, 237, 0.28);
+        }
+
+        .profile-image-frame {
+            width: min(100%, 24rem);
+            aspect-ratio: 4 / 3;
+            box-shadow: 0 16px 48px rgba(2, 6, 23, 0.35);
+        }
+
+        .profile-image-frame img {
+            object-position: center 30%;
+        }
+
+        @media (max-width: 640px) {
+            section.py-20 {
+                padding-top: 3.5rem;
+                padding-bottom: 3.5rem;
+            }
+
+            section.py-16 {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+        }
+
+        @media (hover: none) {
+            .project-card .project-action-overlay {
+                opacity: 1;
+            }
+
+            .project-action-overlay a {
+                min-width: 2.75rem;
+                min-height: 2.75rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
